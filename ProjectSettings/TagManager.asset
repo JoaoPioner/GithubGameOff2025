@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HUMANS
   - GOBLINS
+  - TOWER
   layers:
   - Default
   - TransparentFX

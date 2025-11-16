@@ -123,4 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 0
-  impactEffect: {fileID: 0}
+  impactEffect: {fileID: 32395644823239882}

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     [SerializeField] public float HP = 100f;
+    [SerializeField] public float attackPower = 10f;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,6 +15,11 @@ public class Piece : MonoBehaviour
     public void Damage(float hits)
     {
         HP -= hits;
+    }
+
+    public void Attack(Piece targetPiece)
+    {
+        targetPiece.Damage(attackPower);
     }
 
     // Update is called once per frame

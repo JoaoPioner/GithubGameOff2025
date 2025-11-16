@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4361752733448729203}
   - component: {fileID: 4073226453446910415}
   m_Layer: 0
-  m_Name: PlayerPiece
+  m_Name: HumanWarrior
   m_TagString: HUMANS
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

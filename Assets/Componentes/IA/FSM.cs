@@ -169,9 +169,9 @@ public class FSM : MonoBehaviour
             // Debug.Log(name + " atacou " + target.name);
 
             Piece targetRef = target.GetComponent<Piece>();
-            if (targetRef is not null)
+            if (targetRef != null)
             {
-                targetRef.Damage(10f);
+                myPiece.Attack(targetRef);
             }
         }
 

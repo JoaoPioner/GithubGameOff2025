@@ -16,7 +16,7 @@ public class FSM : MonoBehaviour
     public AIState actualState;
 
     [Header("Configurações de Movimento")]
-    private NavMeshAgent agent; // O componente que move a tropa (o "GPS")
+    protected NavMeshAgent agent; // O componente que move a tropa (o "GPS")
 
     [Header("Configuração de Alvo")]
     public Transform target = null;
@@ -27,9 +27,10 @@ public class FSM : MonoBehaviour
     public float attackSpd = 1f;
     public float cooldown = 2f;
 
-    private Piece myPiece;
+    protected Piece myPiece;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         myPiece = GetComponent<Piece>();
@@ -37,7 +38,7 @@ public class FSM : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         // Debug.Log(name + " está no estado " + actualState);
         // Debug.Log("Alvo atual: " + (target == null ? "Nenhum" : target.name));
@@ -54,7 +55,8 @@ public class FSM : MonoBehaviour
                 break;
         }
     }
-    private void ChangeState(AIState newState)
+    
+    protected void ChangeState(AIState newState)
     {
         // Debug.Log(name + " mudou do estado " + actualState + " para " + newState);
         actualState = newState;
@@ -65,7 +67,7 @@ public class FSM : MonoBehaviour
         }
     }
 
-    private void Searching()
+    protected virtual void Searching()
     {
         if (target != null)
         {
@@ -110,17 +112,10 @@ public class FSM : MonoBehaviour
         }
     }
 
-    private void Moving()
+    protected virtual void Moving()
     {
-        if (target == null)
+        if (CheckLostTarget())
         {
-            ChangeState(AIState.SEARCHING);
-            return;
-        }
-        else if (!target.gameObject.activeInHierarchy)
-        {
-            target = null;
-            ChangeState(AIState.SEARCHING);
             return;
         }
 
@@ -137,18 +132,10 @@ public class FSM : MonoBehaviour
         }
     }
 
-    private void Attacking()
+    protected virtual void Attacking()
     {
-        if (target == null)
+        if (CheckLostTarget())
         {
-            ChangeState(AIState.SEARCHING);
-            return;
-        }
-
-        if (!target.gameObject.activeInHierarchy)
-        {
-            target = null;
-            ChangeState(AIState.SEARCHING);
             return;
         }
 
@@ -175,6 +162,24 @@ public class FSM : MonoBehaviour
             }
         }
 
+    }
+
+    protected bool CheckLostTarget()
+    {
+        if (target == null)
+        {
+            ChangeState(AIState.SEARCHING);
+            return true;
+        }
+
+        if (!target.gameObject.activeInHierarchy)
+        {
+            target = null;
+            ChangeState(AIState.SEARCHING);
+            return true;
+        }
+
+        return false;
     }
 }
 

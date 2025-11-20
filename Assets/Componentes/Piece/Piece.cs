@@ -1,14 +1,22 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Piece : MonoBehaviour
 {
   [SerializeField] public float HP = 100f;
-  [SerializeField] public float attackPower = 10f;
+    [SerializeField] public float currentHP;
+    [SerializeField] public float attackPower = 10f;
+    public Image healthBar;
 
-  public void Damage(float hits)
+    void Start()
+    {
+        currentHP = HP;
+    }
+    public void Damage(float hits)
   {
-    HP -= hits;
-    if (HP <= 0)
+    currentHP -= hits;
+
+    if (currentHP <= 0)
     {
       var tower = GetComponent<Tower>();
       if (tower != null)
@@ -17,7 +25,11 @@ public class Piece : MonoBehaviour
       }
       Debug.Log(gameObject.name + " foi destruído.");
       Destroy(gameObject);
-    }
+    } else
+        {
+            currentHP = Mathf.Clamp(currentHP, 0, HP);
+            healthBar.fillAmount = (float)currentHP / HP;
+        }
   }
 
   public void Attack(Piece targetPiece)

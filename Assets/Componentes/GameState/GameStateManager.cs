@@ -11,7 +11,7 @@ public class GameStateManager : MonoBehaviour
 
   [Header("Progresso da Partida")]
   public int actualRound = 1;
-  public int VPCount;
+    public int VPCount;
 
   [Header("Condições de Jogo")]
   public bool jogoEmPausa = false;

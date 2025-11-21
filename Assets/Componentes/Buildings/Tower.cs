@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Tower : MonoBehaviour
+public class Tower : MonoBehaviour, IBuilding
 {
   [Header("Tower config")]
   public float attackRange = 10f;

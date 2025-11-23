@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Componentes/UI/HUD/Card/CardStyles.uss?fileID=7433441132597879392&amp;guid=d491a137c549b274088dc25001c36fa8&amp;type=3#CardStyles" />
+    <ui:VisualElement name="Container" class="container" style="flex-grow: 0; align-items: center; justify-content: flex-start; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-left-color: rgb(125, 125, 125); border-right-color: rgb(125, 125, 125); border-top-color: rgb(125, 125, 125); border-bottom-color: rgb(125, 125, 125); margin-top: 16px; margin-bottom: 16px; flex-shrink: 0; height: 100px; width: 100%; margin-right: 0; margin-left: 0;">
+        <ui:VisualElement name="PieceThumbnail" class="pieceThumbNail">
+            <ui:VisualElement name="PieceSymbol" class="pieceSymbol" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Price" class="price">
+            <ui:Label text="100" name="PriceLabel" class="priceLabel" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

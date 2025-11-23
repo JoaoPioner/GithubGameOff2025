@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Componentes/UI/HUD/HudStyles.uss?fileID=7433441132597879392&amp;guid=0d6b494a94bcaff4a9826ee3abaf1304&amp;type=3#HudStyles" />
+    <ui:VisualElement name="Container" style="flex-grow: 1; align-items: flex-end;">
+        <ui:VisualElement name="SideBar" class="sideBar">
+            <ui:VisualElement name="Gold" class="gold">
+                <ui:Label text="100" name="GoldLabel" double-click-selects-word="false" triple-click-selects-line="false" emoji-fallback-support="false" class="goldLabel" />
+            </ui:VisualElement>
+            <ui:ScrollView name="PieceCards" class="pieces" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

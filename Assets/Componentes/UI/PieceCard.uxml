@@ -1,9 +1,0 @@
-<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Componentes/UI/cardStyles.uss?fileID=7433441132597879392&amp;guid=40942ac728fdcb248b48b89f4a8f017e&amp;type=3#cardStyles" />
-    <ui:VisualElement name="CardRoot" class="root">
-        <ui:VisualElement name="CardIcon" class="icon" style="flex-grow: 1;" />
-        <ui:VisualElement name="LableBG" class="LableBG" style="flex-grow: 1;">
-            <ui:Label text="Label" name="CostLabel" class="cost" />
-        </ui:VisualElement>
-    </ui:VisualElement>
-</ui:UXML>

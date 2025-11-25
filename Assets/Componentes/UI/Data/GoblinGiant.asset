@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a1bdbb5f5cfca24288f65ea5ddf586d, type: 3}
-  m_Name: Warrior
+  m_Name: GoblinGiant
   m_EditorClassIdentifier: 
-  unitName: Warrior
+  unitName: GoblinGiant
   icon: {fileID: 0}
-  cost: 100
-  prefab: {fileID: 6249004204911877825, guid: 70022fddfccf60a4ea5ff682d526b462, type: 3}
+  cost: 150
+  prefab: {fileID: 7499966685400338113, guid: 1125ee3c5acf811439221480c4f67129, type: 3}

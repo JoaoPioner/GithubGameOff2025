@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a1bdbb5f5cfca24288f65ea5ddf586d, type: 3}
-  m_Name: Archer
+  m_Name: GoblinBandit
   m_EditorClassIdentifier: 
-  unitName: Archer
+  unitName: GoblinBandit
   icon: {fileID: 0}
   cost: 150
-  prefab: {fileID: 2137103410878484633, guid: a752f76898abf6c47bb12c14124c4e89, type: 3}
+  prefab: {fileID: 7499966685400338113, guid: b0257992bfe21f342b2e24d05c7a0697, type: 3}

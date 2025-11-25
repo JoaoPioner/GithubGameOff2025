@@ -9,5 +9,5 @@ public class UnitData : ScriptableObject
   public int cost;
 
   [Header("Gameplay")]
-  public GameObject prefab;
+  public Piece prefab;
 }

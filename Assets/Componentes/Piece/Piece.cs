@@ -1,18 +1,28 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Piece : MonoBehaviour
 {
-  [SerializeField] public float HP = 100f;
-    [SerializeField] public float currentHP;
-    [SerializeField] public float attackPower = 10f;
-    public Image healthBar;
+  public event Action<Piece> OnDeath; 
 
-    void Start()
-    {
-        currentHP = HP;
-    }
-    public void Damage(float hits)
+  [SerializeField]
+  public float HP = 100f;
+
+  [SerializeField]
+  public float currentHP;
+
+  [SerializeField]
+  public float attackPower = 10f;
+
+  public Image healthBar;
+
+  void Start()
+  {
+    currentHP = HP;
+  }
+
+  public void Damage(float hits)
   {
     currentHP -= hits;
 
@@ -23,13 +33,16 @@ public class Piece : MonoBehaviour
       {
         GameStateManager.Instance.VPDestroyed();
       }
+
       Debug.Log(gameObject.name + " foi destruído.");
+      OnDeath?.Invoke(this);
       Destroy(gameObject);
-    } else
-        {
-            currentHP = Mathf.Clamp(currentHP, 0, HP);
-            healthBar.fillAmount = (float)currentHP / HP;
-        }
+    }
+    else
+    {
+      currentHP = Mathf.Clamp(currentHP, 0, HP);
+      healthBar.fillAmount = (float)currentHP / HP;
+    }
   }
 
   public void Attack(Piece targetPiece)

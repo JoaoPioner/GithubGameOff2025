@@ -41,7 +41,7 @@ public class SpawnManager : MonoBehaviour
     if (currentGhost != null) Destroy(currentGhost);
 
     currentUnitData = unitData;
-    currentGhost = Instantiate(unitData.prefab);
+    currentGhost = Instantiate(unitData.prefab.gameObject);
 
     var agent = currentGhost.GetComponent<NavMeshAgent>();
     if (agent != null) agent.enabled = false;

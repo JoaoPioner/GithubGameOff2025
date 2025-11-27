@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: Archer
   icon: {fileID: 0}
   cost: 150
-  prefab: {fileID: -4630985220563197602, guid: a752f76898abf6c47bb12c14124c4e89, type: 3}
+  prefab: {fileID: 4343573324556753991, guid: 802658780fb3ae54f9fa9cce95b20c6b, type: 3}

@@ -5140,6 +5140,78 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f985e917d7437984282a12dbabed4fd1, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[0].name
+      value: ArrowShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8768a99687e1d164f8d52775f96771b6, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[1].name
+      value: ArrowShot2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 445236b2fc8e0ae4fa209fc7f1781016, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[2].name
+      value: EnemyDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fe59885512bd9be4d90a340fc5f1b95a, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[3].name
+      value: HumanDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 150cb2c3e09efee44a8cc399ba4b52f9, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[4].name
+      value: HumanSpawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: e0711675ed622d540807f3bf8a2cbf77, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[5].name
+      value: SwordHit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f985e917d7437984282a12dbabed4fd1, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[6].name
+      value: SwordHit2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 65016655dabef5043a248f9f661897de, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[7].name
+      value: TowerDestoryed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: musicTracks.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2de6f55f5b5d4654d869d8511b793fde, type: 3}
     - target: {fileID: 6805454603340801230, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: m_Volume
       value: 0.3

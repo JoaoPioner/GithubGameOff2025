@@ -377,7 +377,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &2255922153155048617
@@ -394,6 +394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 30
   currentHP: 0
+  isUnarmed: 0
+  isRanged: 0
+  isWizard: 0
   attackPower: 10
   healthBar: {fileID: 8198208733607632632}
 --- !u!114 &7153976138886558467

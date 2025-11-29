@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4775147505859766705}
   m_Layer: 0
   m_Name: PTower
-  m_TagString: HUMANS
+  m_TagString: TOWER
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,6 +89,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 100
   currentHP: 0
+  isUnarmed: 0
+  isRanged: 0
+  isWizard: 0
   attackPower: 10
   healthBar: {fileID: 6799416399335712122}
 --- !u!1 &2237803309773151618

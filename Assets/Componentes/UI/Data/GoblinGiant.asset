@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: GoblinGiant
   icon: {fileID: 0}
   cost: 150
-  prefab: {fileID: 7499966685400338113, guid: 1125ee3c5acf811439221480c4f67129, type: 3}
+  prefab: {fileID: 3167460683121053683, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: GoblinArcher
   icon: {fileID: 0}
   cost: 150
-  prefab: {fileID: 8747059019125163400, guid: 022c355ad9007774d9525bf0fcb9f1b2, type: 3}
+  prefab: {fileID: 5287892783099894811, guid: fea28814befc0db4997bcb519aff9649, type: 3}

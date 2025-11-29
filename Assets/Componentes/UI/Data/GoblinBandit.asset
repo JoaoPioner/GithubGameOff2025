@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: GoblinBandit
   icon: {fileID: 0}
   cost: 150
-  prefab: {fileID: 7499966685400338113, guid: b0257992bfe21f342b2e24d05c7a0697, type: 3}
+  prefab: {fileID: 65770080121186410, guid: 9c1b7587b58462646a71a65f859c0ee6, type: 3}

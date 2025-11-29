@@ -11,7 +11,7 @@ public class GameStateManager : MonoBehaviour
 
   [Header("Progresso da Partida")]
   public int actualRound = 1;
-    public int VPCount;
+  public int VPCount;
 
   [Header("Condições de Jogo")]
   public bool jogoEmPausa = false;
@@ -20,6 +20,12 @@ public class GameStateManager : MonoBehaviour
   private float tickTimer = 0f;
 
   public event Action<int> OnGoldChanged;
+  public event Action<bool> OnGameEnded;
+
+  [SerializeField]
+  public GameObject EnemySpawner;
+
+  private WaveManager waveManager;
 
   void Awake()
   {
@@ -32,6 +38,12 @@ public class GameStateManager : MonoBehaviour
     {
       Debug.Log("GameManager Duplicado Destruído");
       Destroy(gameObject);
+    }
+
+    if (EnemySpawner != null)
+    {
+      waveManager = EnemySpawner.GetComponent<WaveManager>();
+      waveManager.OnLastWaveFinished += () => EndGame(true);
     }
   }
 
@@ -88,13 +100,14 @@ public class GameStateManager : MonoBehaviour
     if (playerWon)
     {
       Debug.Log("Parabéns! Você venceu!");
+      OnGameEnded?.Invoke(true);
       Time.timeScale = 0f;
     }
     else
     {
       Debug.Log("Game Over! Você perdeu!");
+      OnGameEnded?.Invoke(false);
       Time.timeScale = 0f;
     }
   }
-
 }

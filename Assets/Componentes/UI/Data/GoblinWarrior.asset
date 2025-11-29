@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: GoblinWarrior
   icon: {fileID: 0}
   cost: 150
-  prefab: {fileID: 6310750530905437738, guid: c25b77343d922d64992c72936f213387, type: 3}
+  prefab: {fileID: 4445272656324736404, guid: c55c9eab1d90f3f4ea6638ac6d1bcfc5, type: 3}

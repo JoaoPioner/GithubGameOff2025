@@ -8,13 +8,25 @@ public class FSM_Ranged : FSM
     public Transform firePoint; // Ponto de onde os projéteis são disparados
     public GameObject projectilePrefab; // Prefab do projétil
 
+    [SerializeField]
+    public bool isWizard = false;
+
+    private Animator animator;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+        if (animator != null)
+        { animator.SetBool("IsWizard", isWizard); }
+    }
+
     protected override void Attacking()
     {
         if (CheckLostTarget())
         {
             return;
         }
-        
+
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
         if (distanceToTarget > range)
         {
@@ -31,6 +43,8 @@ public class FSM_Ranged : FSM
 
             GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             Projectile projectile = projectileGO.GetComponent<Projectile>();
+            if (animator != null)
+            { animator.SetTrigger("Attack"); }
             if (projectile != null)
             {
                 projectile.Seek(target);

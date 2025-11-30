@@ -429,8 +429,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.2696, y: -11.053505, z: 2.5704384}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8869575306523957315}
   - {fileID: 1469152021319012305}
@@ -515,9 +515,11 @@ MonoBehaviour:
   actualState: 0
   target: {fileID: 0}
   targetTag: GOBLINS
+  searchInterval: 0.5
   range: 5
   attackSpd: 1
   cooldown: 2
+  isFoe: 0
   firePoint: {fileID: 1469152021319012305}
   projectilePrefab: {fileID: 2386992535458310089, guid: 2339d81d9cfc79b439ad795615180a0e, type: 3}
   isWizard: 0

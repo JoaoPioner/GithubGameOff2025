@@ -805,6 +805,7 @@ GameObject:
   - component: {fileID: 4059211856362195291}
   - component: {fileID: 2057321266531949764}
   - component: {fileID: 2380149350179809107}
+  - component: {fileID: -8174093838262053131}
   m_Layer: 0
   m_Name: PArcher 1
   m_TagString: Untagged
@@ -822,8 +823,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1809689552878502336}
   - {fileID: 8754280930163130227}
@@ -915,12 +916,36 @@ MonoBehaviour:
   actualState: 0
   target: {fileID: 0}
   targetTag: GOBLINS
+  searchInterval: 0.5
   range: 5
   attackSpd: 1
   cooldown: 2
-  firePoint: {fileID: 0}
-  projectilePrefab: {fileID: 0}
+  isFoe: 0
+  firePoint: {fileID: 9101652106442921960}
+  projectilePrefab: {fileID: 2386992535458310089, guid: 2339d81d9cfc79b439ad795615180a0e, type: 3}
   isWizard: 0
+--- !u!95 &-8174093838262053131
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2513245068542581535}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1fe006ad63c45774e940c517dd6ac74b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2732226698812202341
 GameObject:
   m_ObjectHideFlags: 0

@@ -1840,8 +1840,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 654021493489310930}
   - {fileID: 2888513445045384903}
@@ -1933,9 +1933,11 @@ MonoBehaviour:
   actualState: 0
   target: {fileID: 0}
   targetTag: HUMANS
+  searchInterval: 0.5
   range: 2
   attackSpd: 1
   cooldown: 2
+  isFoe: 1
 --- !u!136 &4594685839505931843
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -327,8 +327,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8470208758344125853}
   - {fileID: 9219170431145904774}
@@ -396,7 +396,6 @@ MonoBehaviour:
   currentHP: 0
   isUnarmed: 0
   isRanged: 0
-  isWizard: 0
   attackPower: 10
   healthBar: {fileID: 8198208733607632632}
 --- !u!114 &7153976138886558467
@@ -414,11 +413,14 @@ MonoBehaviour:
   actualState: 0
   target: {fileID: 0}
   targetTag: HUMANS
+  searchInterval: 0.5
   range: 2
   attackSpd: 1
   cooldown: 2
+  isFoe: 1
   firePoint: {fileID: 9117305696684161999}
   projectilePrefab: {fileID: 32395644823239882, guid: 09bcfb19e106897428727c572bb3368b, type: 3}
+  isWizard: 1
 --- !u!1001 &3428766184172713427
 PrefabInstance:
   m_ObjectHideFlags: 0

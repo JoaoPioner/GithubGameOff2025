@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4415100237628120386}
   - {fileID: 6660006379104797909}
@@ -91,7 +91,6 @@ MonoBehaviour:
   currentHP: 0
   isUnarmed: 0
   isRanged: 0
-  isWizard: 0
   attackPower: 10
   healthBar: {fileID: 6799416399335712122}
 --- !u!1 &2237803309773151618
@@ -386,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 9036819598228674920}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.703, z: 0}
+  m_LocalPosition: {x: 0, y: 2.703, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

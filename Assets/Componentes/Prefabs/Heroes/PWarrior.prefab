@@ -338,15 +338,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c073fcd8747c41f45b885b1f0f1e90bf, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c073fcd8747c41f45b885b1f0f1e90bf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c073fcd8747c41f45b885b1f0f1e90bf, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c073fcd8747c41f45b885b1f0f1e90bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -530,9 +530,11 @@ MonoBehaviour:
   actualState: 0
   target: {fileID: 0}
   targetTag: GOBLINS
+  searchInterval: 0.5
   range: 2
   attackSpd: 1
   cooldown: 2
+  isFoe: 0
 --- !u!95 &8777821155097888558
 Animator:
   serializedVersion: 7

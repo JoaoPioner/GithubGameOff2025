@@ -16,32 +16,39 @@ public class FSM : MonoBehaviour
     public AIState actualState;
 
     [Header("Configurações de Movimento")]
-    protected NavMeshAgent agent; // O componente que move a tropa (o "GPS")
+    protected NavMeshAgent agent;
 
     [Header("Configuração de Alvo")]
     public Transform target = null;
     public string targetTag = "Enemy";
+
+    [Header("Configurações de Busca (Reavaliação)")]
+    // NOVO: Define de quanto em quanto tempo ele procura novos alvos enquanto anda
+    public float searchInterval = 0.5f;
+    private float lastSearchTime = 0f;
 
     [Header("Configurações de Ataque")]
     public float range = 2f;
     public float attackSpd = 1f;
     public float cooldown = 2f;
 
+    [SerializeField]
+    public bool isFoe = false;
+
     protected Piece myPiece;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     protected void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         myPiece = GetComponent<Piece>();
         actualState = AIState.SEARCHING;
+
+        // Garante que a busca inicial aconteça imediatamente
+        lastSearchTime = -searchInterval;
     }
 
-    // Update is called once per frame
     protected void Update()
     {
-        // Debug.Log(name + " está no estado " + actualState);
-        // Debug.Log("Alvo atual: " + (target == null ? "Nenhum" : target.name));
         switch (actualState)
         {
             case AIState.SEARCHING:
@@ -55,10 +62,9 @@ public class FSM : MonoBehaviour
                 break;
         }
     }
-    
+
     protected void ChangeState(AIState newState)
     {
-        // Debug.Log(name + " mudou do estado " + actualState + " para " + newState);
         actualState = newState;
 
         if (newState == AIState.MOVING)
@@ -67,48 +73,57 @@ public class FSM : MonoBehaviour
         }
     }
 
+    // --- MUDANÇA 1: Lógica de encontrar alvo extraída para uma função auxiliar ---
+    // Isso permite que a gente reuse essa lógica tanto no SEARCHING quanto no MOVING
+    protected Transform FindClosestTarget()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetTag);
+
+        // Lógica específica para quando é inimigo e não acha player (vai na torre)
+        if (enemies.Length == 0 && isFoe)
+        {
+            enemies = GameObject.FindGameObjectsWithTag("TOWER");
+        }
+
+        float menorDistancia = Mathf.Infinity;
+        GameObject closestEnemy = null;
+
+        foreach (GameObject enemy in enemies)
+        {
+            if (!enemy.activeInHierarchy) continue;
+
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if (distance < menorDistancia)
+            {
+                menorDistancia = distance;
+                closestEnemy = enemy;
+            }
+        }
+
+        return closestEnemy != null ? closestEnemy.transform : null;
+    }
+
     protected virtual void Searching()
     {
-        if (target != null)
+        // Se já temos um alvo válido, movemos
+        if (target != null && target.gameObject.activeInHierarchy)
         {
             ChangeState(AIState.MOVING);
             return;
         }
+
+        // Usa a nova função auxiliar
+        Transform newTarget = FindClosestTarget();
+
+        if (newTarget != null)
+        {
+            target = newTarget;
+            ChangeState(AIState.MOVING);
+        }
         else
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetTag);
-            // Debug.Log(enemies.Length + " inimigos encontrados.");
-
-            float menorDistancia = Mathf.Infinity;
-            GameObject closestEnemy = null;
-
-            foreach (GameObject enemy in enemies)
-            {
-                // Ignora enemys que já estão mortos/inativos
-                if (!enemy.activeInHierarchy) continue;
-
-                float distance = Vector3.Distance(transform.position, enemy.transform.position);
-
-                // Se este enemy está mais perto que o último que checamos...
-                if (distance < menorDistancia)
-                {
-                    menorDistancia = distance;
-                    closestEnemy = enemy;
-                }
-            }
-
-            if (closestEnemy != null)
-            {
-                target = closestEnemy.transform;
-                ChangeState(AIState.MOVING);
-                return;
-            }
-            else
-            {
-                target = null;
-                return;
-            }
-
+            target = null;
         }
     }
 
@@ -119,7 +134,26 @@ public class FSM : MonoBehaviour
             return;
         }
 
+        // --- MUDANÇA 2: Reavaliação Periódica ---
+        // A cada 'searchInterval' segundos, verificamos se existe alguém mais perto
+        if (Time.time > lastSearchTime + searchInterval)
+        {
+            lastSearchTime = Time.time;
+
+            Transform potentialNewTarget = FindClosestTarget();
+
+            // Se achamos alguém E esse alguém é diferente do atual...
+            if (potentialNewTarget != null && potentialNewTarget != target)
+            {
+                // ...trocamos de alvo!
+                target = potentialNewTarget;
+                // Debug.Log("Troquei de alvo para um mais próximo!");
+            }
+        }
+        // ----------------------------------------
+
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
         if (distanceToTarget <= range)
         {
             agent.isStopped = true;
@@ -128,6 +162,7 @@ public class FSM : MonoBehaviour
         }
         else
         {
+            // Importante atualizar o destino caso o alvo tenha mudado ou se movido
             agent.SetDestination(target.position);
         }
     }
@@ -138,6 +173,11 @@ public class FSM : MonoBehaviour
         {
             return;
         }
+
+        // Opcional: Você também pode querer que ele troque de alvo enquanto ataca
+        // se alguém passar muito perto, mas no Clash Royale geralmente eles
+        // focam até o alvo sair do alcance ou morrer. 
+        // Vamos manter simples por enquanto.
 
         float distanceToTarget = Vector3.Distance(transform.position, target.position);
         if (distanceToTarget > range)
@@ -153,40 +193,22 @@ public class FSM : MonoBehaviour
         {
             cooldown = Time.time;
 
-            // Debug.Log(name + " atacou " + target.name);
-
             Piece targetRef = target.GetComponent<Piece>();
             if (targetRef != null)
             {
                 myPiece.Attack(targetRef);
-                if (myPiece.gameObject.tag == "HUMANS") 
-                {
-                    AudioManager.instance.PlaySFX("SwordHit2");
-                } else
-                {
-                    AudioManager.instance.PlaySFX("SwordHit");
-                }
             }
         }
-
     }
 
     protected bool CheckLostTarget()
     {
-        if (target == null)
-        {
-            ChangeState(AIState.SEARCHING);
-            return true;
-        }
-
-        if (!target.gameObject.activeInHierarchy)
+        if (target == null || !target.gameObject.activeInHierarchy)
         {
             target = null;
             ChangeState(AIState.SEARCHING);
             return true;
         }
-
         return false;
     }
 }
-

@@ -855,7 +855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualState: 0
   target: {fileID: 0}
-  targetTag: HUMANS
+  targetTag: TOWER
   searchInterval: 0.5
   range: 2
   attackSpd: 1

@@ -3,7 +3,13 @@
     <ui:VisualElement name="Container" style="flex-grow: 1; align-items: flex-end;">
         <ui:VisualElement name="SideBar" class="sideBar">
             <ui:VisualElement name="Gold" class="gold">
+                <ui:VisualElement name="CoinICon" style="flex-grow: 0; flex-shrink: 0; width: 32px; height: 32px; margin-left: 16px; margin-right: 16px; background-image: url(&quot;project://database/Assets/Free%20Icon%20Pack%203.0.1%20(Basic)/Currency/Coin/64px/Golden%20Coin%202nd%2064px.png?fileID=2800000&amp;guid=0bbfa330e668ccf46a8aafa072fe43e0&amp;type=3#Golden Coin 2nd 64px&quot;);" />
                 <ui:Label text="100" name="GoldLabel" double-click-selects-word="false" triple-click-selects-line="false" emoji-fallback-support="false" class="goldLabel" />
+            </ui:VisualElement>
+            <ui:VisualElement name="RoundCounter" class="gold" style="flex-grow: 0; flex-shrink: 0;">
+                <ui:VisualElement name="RoundLogo" style="flex-grow: 0; flex-shrink: 0; width: 32px; height: 32px; margin-left: 16px; background-image: url(&quot;project://database/Assets/Free%20Icon%20Pack%203.0.1%20(Basic)/Player/Skull/64px/Skull%20White%2064px.png?fileID=2800000&amp;guid=91229b415c8067847b6d979bccd17482&amp;type=3#Skull White 64px&quot;); margin-right: 16px;" />
+                <ui:Label text="0&#10;" name="ActualRound" class="goldLabel" />
+                <ui:Label text="/ 10" name="MaxRound" class="goldLabel" />
             </ui:VisualElement>
             <ui:ScrollView name="PieceCards" class="pieces" />
         </ui:VisualElement>

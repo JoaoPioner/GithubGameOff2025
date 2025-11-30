@@ -6528,7 +6528,7 @@ Transform:
   m_GameObject: {fileID: 412025196}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.92387956, z: -0.38268343, w: 0}
-  m_LocalPosition: {x: -8.4, y: 35.7, z: 64}
+  m_LocalPosition: {x: -5.21, y: 35.7, z: 64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11761,7 +11761,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gold: 100
+  maxGold: 500
   actualRound: 1
+  maxRounds: 10
   VPCount: 3
   jogoEmPausa: 0
   jogoAcabou: 0
@@ -12056,6 +12058,7 @@ MonoBehaviour:
   unitsAvailable:
   - {fileID: 11400000, guid: 0fbd03d72a440df4187addef59cfecdd, type: 2}
   - {fileID: 11400000, guid: 4fe78797c758baf43ae1b52f4702a19a, type: 2}
+  - {fileID: 11400000, guid: bbef8bf58c93db749b754eae82a44448, type: 2}
 --- !u!1 &760633965
 GameObject:
   m_ObjectHideFlags: 0
@@ -13954,7 +13957,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6, y: 2.2, z: 1}
+  m_LocalScale: {x: 1.75, y: 2.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 360504898}

@@ -8,9 +8,11 @@ public class GameStateManager : MonoBehaviour
 
   [Header("Economia")]
   public int gold = 100;
+  public int maxGold = 500;
 
   [Header("Progresso da Partida")]
   public int actualRound = 1;
+  public int maxRounds = 10;
   public int VPCount;
 
   [Header("Condições de Jogo")]
@@ -21,6 +23,8 @@ public class GameStateManager : MonoBehaviour
 
   public event Action<int> OnGoldChanged;
   public event Action<bool> OnGameEnded;
+
+  public event Action<int> onRoundChanged;
 
   [SerializeField]
   public GameObject EnemySpawner;
@@ -60,7 +64,7 @@ public class GameStateManager : MonoBehaviour
   void Update()
   {
     tickTimer += Time.deltaTime;
-    if (tickTimer >= 1f)
+    if (!jogoEmPausa && !jogoAcabou && tickTimer >= 5f)
     {
       AddGold(10);
       Debug.Log("Ouro atual: " + gold);
@@ -70,7 +74,14 @@ public class GameStateManager : MonoBehaviour
 
   public void AddGold(int amount)
   {
-    gold += amount;
+    if (gold >= maxGold)
+    {
+      return;
+    }
+    else
+    {
+      gold += amount;
+    }
     OnGoldChanged?.Invoke(gold);
   }
 
@@ -79,6 +90,7 @@ public class GameStateManager : MonoBehaviour
     if (gold >= amount)
     {
       gold -= amount;
+      OnGoldChanged?.Invoke(gold);
       return true;
     }
     else
@@ -109,5 +121,10 @@ public class GameStateManager : MonoBehaviour
       OnGameEnded?.Invoke(false);
       Time.timeScale = 0f;
     }
+  }
+
+  internal void InvokeOnRoundChanged(int currentWaveIndex)
+  {
+    onRoundChanged?.Invoke(currentWaveIndex);
   }
 }

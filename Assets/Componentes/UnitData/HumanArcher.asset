@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HumanArcher
   m_EditorClassIdentifier: 
   unitName: Archer
-  icon: {fileID: 0}
+  icon: {fileID: 2800000, guid: 2d9b96884220b8f4b8f4e2175ae1224a, type: 3}
   cost: 150
   prefab: {fileID: 4343573324556753991, guid: 32f148836287f2c43b75439d2858dee7, type: 3}

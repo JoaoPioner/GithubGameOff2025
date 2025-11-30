@@ -75,7 +75,9 @@ public class SpawnManager : MonoBehaviour
   }
   void PositionPiece()
   {
-    if (GameStateManager.Instance.SpendGold(-currentUnitData.cost) == false)
+    bool gastou = GameStateManager.Instance.SpendGold(currentUnitData.cost);
+    Debug.Log($"Tentando construir {currentUnitData.unitName} por {currentUnitData.cost} de ouro.");
+    if (!gastou)
     {
       Debug.Log("Ouro insuficiente na hora H!");
       CancelGhost();

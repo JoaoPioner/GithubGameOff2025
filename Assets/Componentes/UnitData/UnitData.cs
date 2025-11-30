@@ -5,7 +5,7 @@ public class UnitData : ScriptableObject
 {
   [Header("Informações Básicas")]
   public string unitName;
-  public Sprite icon;
+  public Texture2D icon;
   public int cost;
 
   [Header("Gameplay")]

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -77,12 +78,15 @@ public class FSM : MonoBehaviour
     // Isso permite que a gente reuse essa lógica tanto no SEARCHING quanto no MOVING
     protected Transform FindClosestTarget()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(targetTag);
+        GameObject[] enemies;
 
-        // Lógica específica para quando é inimigo e não acha player (vai na torre)
-        if (enemies.Length == 0 && isFoe)
+        if (isFoe && targetTag != "TOWER")
         {
-            enemies = GameObject.FindGameObjectsWithTag("TOWER");
+            enemies = GameObject.FindGameObjectsWithTag(targetTag).Concat(GameObject.FindGameObjectsWithTag("TOWER")).ToArray();
+        }
+        else
+        {
+            enemies = GameObject.FindGameObjectsWithTag(targetTag);
         }
 
         float menorDistancia = Mathf.Infinity;

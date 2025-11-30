@@ -14,6 +14,8 @@ public class HUD_Controller : MonoBehaviour
 
   private VisualElement root;
   private Label goldLabel;
+  private Label actualRoundLabel;
+  private Label maxActualRoundLabel;
   private VisualElement unitsContainer;
 
   void Awake()
@@ -22,6 +24,8 @@ public class HUD_Controller : MonoBehaviour
     root = uiDocument.rootVisualElement;
 
     goldLabel = root.Q<Label>(goldLabelName);
+    actualRoundLabel = root.Q<Label>("ActualRound");
+    maxActualRoundLabel = root.Q<Label>("MaxRound");
     unitsContainer = root.Q<VisualElement>(unitListName);
   }
 
@@ -29,8 +33,9 @@ public class HUD_Controller : MonoBehaviour
   {
     InitializeGold();
     RenderUnitCards();
+    if (GameStateManager.Instance != null)
+      maxActualRoundLabel.text = "/ " + GameStateManager.Instance.maxRounds.ToString();
 
-    // Faz uma verificação inicial logo que o jogo abre
     UpdateCardsAvailability(GameStateManager.Instance.gold);
   }
 
@@ -42,13 +47,18 @@ public class HUD_Controller : MonoBehaviour
     }
   }
 
-  // --- LÓGICA DO OURO ---
-
   void InitializeGold()
   {
     if (GameStateManager.Instance == null) return;
 
     GameStateManager.Instance.OnGoldChanged += UpdateGoldDisplay;
+    GameStateManager.Instance.onRoundChanged += (newRound) =>
+    {
+      if (actualRoundLabel != null)
+      {
+        actualRoundLabel.text = newRound.ToString();
+      }
+    };
     UpdateGoldDisplay(GameStateManager.Instance.gold);
   }
 
@@ -59,11 +69,8 @@ public class HUD_Controller : MonoBehaviour
       goldLabel.text = newGoldValue.ToString();
     }
 
-    // NOVIDADE: Sempre que o ouro mudar, reavaliamos os cards!
     UpdateCardsAvailability(newGoldValue);
   }
-
-  // --- LÓGICA DOS CARDS ---
 
   void RenderUnitCards()
   {
@@ -74,11 +81,8 @@ public class HUD_Controller : MonoBehaviour
     {
       TemplateContainer cardInstance = cardTemplate.Instantiate();
 
-      // --- NOVIDADE: Guardamos os dados DENTRO do elemento visual ---
-      // Isso permite que a gente recupere o custo desse card mais tarde sem precisar de uma lista paralela
       cardInstance.userData = unit;
 
-      // Busca elementos (Seus nomes atualizados)
       var priceLabel = cardInstance.Q<Label>("PriceLabel");
       var thumbnailEl = cardInstance.Q<VisualElement>("PieceThumbnail");
 
@@ -89,33 +93,24 @@ public class HUD_Controller : MonoBehaviour
         thumbnailEl.style.backgroundImage = new StyleBackground(unit.icon);
       }
 
-      // Callback de clique
       cardInstance.RegisterCallback<ClickEvent>(evt => OnCardClicked(unit));
 
       unitsContainer.Add(cardInstance);
     }
   }
 
-  // --- NOVIDADE: A FUNÇÃO QUE DESABILITA ---
   void UpdateCardsAvailability(int currentGold)
   {
     if (unitsContainer == null) return;
 
-    // "Children()" nos dá a lista de todos os cards que já renderizamos na tela
     foreach (var cardVisual in unitsContainer.Children())
     {
-      // Recuperamos o UnitData que escondemos no 'userData' lá no RenderUnitCards
       UnitData unitData = cardVisual.userData as UnitData;
 
       if (unitData != null)
       {
-        // A LÓGICA MÁGICA:
-        // Se temos dinheiro suficiente, isAffordable é TRUE.
         bool isAffordable = currentGold >= unitData.cost;
 
-        // SetEnabled(false) faz duas coisas:
-        // 1. Impede cliques (o botão para de funcionar).
-        // 2. Adiciona o pseudo-estado :disabled no CSS (para ficar transparente).
         cardVisual.SetEnabled(isAffordable);
       }
     }
@@ -126,7 +121,6 @@ public class HUD_Controller : MonoBehaviour
     if (GameStateManager.Instance.gold < unitData.cost)
     {
       Debug.Log("Sem dinheiro para selecionar!");
-      // Opcional: Tocar som de erro ou piscar vermelho
       return;
     }
 

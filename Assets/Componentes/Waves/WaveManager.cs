@@ -7,10 +7,10 @@ using Random = UnityEngine.Random;
 public class WaveManager : MonoBehaviour
 {
     public event Action OnLastWaveFinished;
-    
+
     [SerializeField]
     private List<Transform> spawnPoints;
-    
+
     [SerializeField]
     private List<WaveData> _waves;
 
@@ -20,9 +20,11 @@ public class WaveManager : MonoBehaviour
     private int _currentWaveIndex = 0;
 
     private int _currentUnitIndex = 0;
-    
+
     private Coroutine _spawnCooldownCoroutine;
-    
+
+    public Action<int> OnRoundChanged;
+
     protected void Start()
     {
         StartWave(_currentWaveIndex);
@@ -47,7 +49,7 @@ public class WaveManager : MonoBehaviour
     {
         Vector3 position = GetRandomSpawnPoint();
         Piece unitPiece = Instantiate(unitData.prefab, position, Quaternion.identity, gameObject.transform);
-        
+
         _activeUnits.Add(unitPiece);
         unitPiece.OnDeath += OnPieceDeath;
 
@@ -68,6 +70,7 @@ public class WaveManager : MonoBehaviour
         if (WaveHasFinished())
         {
             _currentWaveIndex++;
+            GameStateManager.Instance.InvokeOnRoundChanged(_currentWaveIndex);
 
             if (_currentWaveIndex == _waves.Count)
             {
@@ -88,22 +91,22 @@ public class WaveManager : MonoBehaviour
         {
             StopCoroutine(_spawnCooldownCoroutine);
         }
-        
+
         _spawnCooldownCoroutine = StartCoroutine(UnitSpawnCooldownRoutine());
     }
-    
+
     private IEnumerator UnitSpawnCooldownRoutine()
     {
         float secondsToWait = Random.Range(_currentWave.MinSpawnCooldown, _currentWave.MaxSpawnCooldown);
         yield return new WaitForSeconds(secondsToWait);
-        
+
         SpawnUnit(_currentWave.Units[_currentUnitIndex]);
     }
-    
+
     private Vector3 GetRandomSpawnPoint()
     {
-        if(spawnPoints.Count == 0) return new Vector3();
-        
+        if (spawnPoints.Count == 0) return new Vector3();
+
         return spawnPoints[Random.Range(0, spawnPoints.Count)].position;
     }
 

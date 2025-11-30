@@ -42,6 +42,14 @@ public class FSM_Ranged : FSM
             cooldown = Time.time;
 
             GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            if (gameObject.tag == "HUMANS") 
+            {
+                AudioManager.instance.PlaySFX("ArrowShot2");
+            } else
+            {
+                AudioManager.instance.PlaySFX("ArrowShot");
+            }
+
             Projectile projectile = projectileGO.GetComponent<Projectile>();
             if (animator != null)
             { animator.SetTrigger("Attack"); }

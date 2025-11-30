@@ -159,6 +159,13 @@ public class FSM : MonoBehaviour
             if (targetRef != null)
             {
                 myPiece.Attack(targetRef);
+                if (myPiece.gameObject.tag == "HUMANS") 
+                {
+                    AudioManager.instance.PlaySFX("SwordHit2");
+                } else
+                {
+                    AudioManager.instance.PlaySFX("SwordHit");
+                }
             }
         }
 

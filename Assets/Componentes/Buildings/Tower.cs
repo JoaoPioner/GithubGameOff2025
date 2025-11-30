@@ -72,6 +72,7 @@ public class Tower : MonoBehaviour, IBuilding
     if (targetEnemy == null) return;
 
     GameObject projectileGO = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+    AudioManager.instance.PlaySFX("ArrowShot2");
     Projectile projectile = projectileGO.GetComponent<Projectile>();
     if (projectile != null)
     {

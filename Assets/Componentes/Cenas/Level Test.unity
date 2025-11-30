@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
+      propertyPath: m_TagString
+      value: HUMANS
+      objectReference: {fileID: 0}
     - target: {fileID: 3464194074940249830, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15.260363
@@ -296,6 +300,10 @@ PrefabInstance:
     - target: {fileID: 4702448707358174999, guid: 9c1b7587b58462646a71a65f859c0ee6, type: 3}
       propertyPath: m_Name
       value: FoeBandit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702448707358174999, guid: 9c1b7587b58462646a71a65f859c0ee6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5698917572838330590, guid: 9c1b7587b58462646a71a65f859c0ee6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -870,6 +878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoeGiant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3290082067675864450, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8384081284423878057, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.2559588
@@ -971,6 +983,10 @@ PrefabInstance:
     - target: {fileID: 6920243851204314180, guid: c55c9eab1d90f3f4ea6638ac6d1bcfc5, type: 3}
       propertyPath: m_Name
       value: FoeWarrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 6920243851204314180, guid: c55c9eab1d90f3f4ea6638ac6d1bcfc5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1098,6 +1114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoeGiant
       objectReference: {fileID: 0}
+    - target: {fileID: 3290082067675864450, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8384081284423878057, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5469685
@@ -1194,6 +1214,10 @@ PrefabInstance:
     - target: {fileID: 7700039261435906459, guid: de392b22f07958c4fadeb859dd3a15c8, type: 3}
       propertyPath: m_Name
       value: PWarrior
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700039261435906459, guid: de392b22f07958c4fadeb859dd3a15c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1293,6 +1317,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoeWarrior (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6920243851204314180, guid: c55c9eab1d90f3f4ea6638ac6d1bcfc5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1309,6 +1337,10 @@ PrefabInstance:
     - target: {fileID: 4702448707358174999, guid: 9c1b7587b58462646a71a65f859c0ee6, type: 3}
       propertyPath: m_Name
       value: FoeBandit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702448707358174999, guid: 9c1b7587b58462646a71a65f859c0ee6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5698917572838330590, guid: 9c1b7587b58462646a71a65f859c0ee6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1476,6 +1508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoeWarrior (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6920243851204314180, guid: c55c9eab1d90f3f4ea6638ac6d1bcfc5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1509,7 +1545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7032327138267271969, guid: de392b22f07958c4fadeb859dd3a15c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.36830044
+      value: -12.38
       objectReference: {fileID: 0}
     - target: {fileID: 7032327138267271969, guid: de392b22f07958c4fadeb859dd3a15c8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1559,6 +1595,10 @@ PrefabInstance:
     - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_Name
       value: PTower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
+      propertyPath: m_TagString
+      value: HUMANS
       objectReference: {fileID: 0}
     - target: {fileID: 3464194074940249830, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1657,6 +1697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PWarrior (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7700039261435906459, guid: de392b22f07958c4fadeb859dd3a15c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1752,6 +1796,14 @@ PrefabInstance:
     - target: {fileID: 3290082067675864450, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
       propertyPath: m_Name
       value: FoeGiant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3290082067675864450, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6323041852756778027, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
+      propertyPath: targetTag
+      value: HUMANS
       objectReference: {fileID: 0}
     - target: {fileID: 8384081284423878057, guid: 73976f667ed1a7e40aef84e907f34c9c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2049,6 +2101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PArcher 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2513245068542581535, guid: 57e5bda182599a4409ac8a8c82105d58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9101652106442921960, guid: 57e5bda182599a4409ac8a8c82105d58, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.951
@@ -2252,6 +2308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTower
       objectReference: {fileID: 0}
+    - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
+      propertyPath: m_TagString
+      value: HUMANS
+      objectReference: {fileID: 0}
     - target: {fileID: 3464194074940249830, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.533678
@@ -2361,7 +2421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &4641216623123021482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2413,6 +2473,10 @@ PrefabInstance:
     - target: {fileID: 6590208247168698656, guid: fea28814befc0db4997bcb519aff9649, type: 3}
       propertyPath: m_Name
       value: FoeWizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590208247168698656, guid: fea28814befc0db4997bcb519aff9649, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

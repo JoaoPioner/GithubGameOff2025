@@ -329,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 2164952074128670011}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.084, z: 0.626}
+  m_LocalPosition: {x: 0.741, y: 1.388, z: 0.626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -427,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2752114053520103823}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.2696, y: -11.053505, z: 2.5704384}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
@@ -498,7 +498,6 @@ MonoBehaviour:
   currentHP: 0
   isUnarmed: 0
   isRanged: 0
-  isWizard: 0
   attackPower: 10
   healthBar: {fileID: 5231595697530565024}
 --- !u!114 &5090221774713017759
@@ -521,6 +520,7 @@ MonoBehaviour:
   cooldown: 2
   firePoint: {fileID: 1469152021319012305}
   projectilePrefab: {fileID: 2386992535458310089, guid: 2339d81d9cfc79b439ad795615180a0e, type: 3}
+  isWizard: 0
 --- !u!95 &3854299009092757922
 Animator:
   serializedVersion: 7
@@ -530,7 +530,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2752114053520103823}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 5f1f2c6bc9028644aac09b8096043324, type: 3}
   m_Controller: {fileID: 9100000, guid: 1fe006ad63c45774e940c517dd6ac74b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
@@ -538,7 +538,16 @@ Animator:
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'lowerarm.r'\n\tTransform 'upperarm.l'\n\tTransform
+    'chest'\n\tTransform 'lowerarm.l'\n\tTransform 'lowerleg.r'\n\tTransform 'lowerleg.l'\n\tTransform
+    'upperleg.l'\n\tTransform 'toes.r'\n\tTransform 'head'\n\tTransform 'root'\n\tand
+    more ...\n\tFrom animation clip 'Spawn_Air'\n\tFrom animation clip 'Lie_Down'\n\tFrom
+    animation clip 'Cheering'\n\tFrom animation clip 'Death_A'\n\tFrom animation
+    clip 'Death_A_Pose'\n\tFrom animation clip 'Death_B'\n\tFrom animation clip 'Death_B_Pose'\n\tFrom
+    animation clip 'Hit_A'\n\tFrom animation clip 'Hit_B'\n\tFrom animation clip
+    'Idle_B'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -706,7 +715,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 10}
+  m_SizeDelta: {x: 25, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2401807456928797015
 CanvasRenderer:
@@ -1892,7 +1901,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 50, y: 10}
+  m_SizeDelta: {x: 25, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5729853043394330303
 CanvasRenderer:
@@ -1971,7 +1980,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 2.652}
-  m_SizeDelta: {x: 50, y: 10}
+  m_SizeDelta: {x: 25, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4993013936600059439
 Canvas:

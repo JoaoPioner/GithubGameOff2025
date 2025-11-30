@@ -5195,7 +5195,7 @@ PrefabInstance:
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: sfxClips.Array.data[6].clip
       value: 
-      objectReference: {fileID: 8300000, guid: f985e917d7437984282a12dbabed4fd1, type: 3}
+      objectReference: {fileID: 8300000, guid: dc7d34e863f5a9649bb52348e90d5ca7, type: 3}
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: sfxClips.Array.data[6].name
       value: SwordHit2
@@ -5206,7 +5206,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 65016655dabef5043a248f9f661897de, type: 3}
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: sfxClips.Array.data[7].name
-      value: TowerDestoryed
+      value: TowerDestroyed
       objectReference: {fileID: 0}
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: musicTracks.Array.data[1].clip

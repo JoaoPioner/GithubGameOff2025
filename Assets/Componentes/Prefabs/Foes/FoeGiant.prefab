@@ -674,11 +674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c823dafc18aefa941ae4ea3c050820fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 250
+  HP: 450
   currentHP: 0
   isUnarmed: 1
   isRanged: 0
-  attackPower: 10
+  attackPower: 15
   healthBar: {fileID: 159553571304255047}
 --- !u!195 &1346566816643525516
 NavMeshAgent:

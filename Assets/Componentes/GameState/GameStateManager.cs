@@ -14,7 +14,6 @@ public class GameStateManager : MonoBehaviour
 
   [Header("Progresso da Partida")]
   public int actualRound = 1;
-  public int maxRounds = 10;
   public int VPCount;
 
   [Header("Condições de Jogo")]
@@ -31,6 +30,8 @@ public class GameStateManager : MonoBehaviour
   [SerializeField]
   private WaveManager waveManager;
 
+  public int MaxRounds  => waveManager.MaxRounds;
+  
   void Awake()
   {
     if (Instance == null)

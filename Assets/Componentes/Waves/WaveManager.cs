@@ -27,10 +27,12 @@ public class WaveManager : MonoBehaviour
     private Coroutine _spawnCooldownCoroutine;
 
     public Action<int> OnRoundChanged;
-
+    
+    public int MaxRounds => _waves.Count; 
+    
     protected void Start()
     {
-        StartWave(_currentWaveIndex);
+        StartCoroutine(WaveStartCooldownRoutine());
     }
 
     private void StartWave(int index)

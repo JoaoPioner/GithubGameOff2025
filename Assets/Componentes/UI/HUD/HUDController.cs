@@ -34,7 +34,7 @@ public class HUD_Controller : MonoBehaviour
     InitializeGold();
     RenderUnitCards();
     if (GameStateManager.Instance != null)
-      maxActualRoundLabel.text = "/ " + GameStateManager.Instance.maxRounds.ToString();
+      maxActualRoundLabel.text = "/ " + GameStateManager.Instance.MaxRounds.ToString();
 
     UpdateCardsAvailability(GameStateManager.Instance.gold);
   }

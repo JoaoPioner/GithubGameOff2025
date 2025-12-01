@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Wall
   icon: {fileID: 2800000, guid: f2a3c89235448274db82e583ed3fbab5, type: 3}
-  cost: 100
+  cost: 250
   prefab: {fileID: 2055327696680945605, guid: 411d641cf30a7294fa426503f36be13f, type: 3}

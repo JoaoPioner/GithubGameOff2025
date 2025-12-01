@@ -35,5 +35,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a902fc616531ff4c8d8d276055662e0, type: 2}
   - {fileID: 11400000, guid: 2f6217bdb6e6c6342b32e05984febdfb, type: 2}
   - {fileID: 11400000, guid: 0a902fc616531ff4c8d8d276055662e0, type: 2}
-  _minSpawnCooldown: 2.5
-  _maxSpawnCooldown: 3.5
+  _minSpawnCooldown: 2
+  _maxSpawnCooldown: 3

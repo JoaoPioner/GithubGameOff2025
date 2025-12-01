@@ -75,6 +75,7 @@ MonoBehaviour:
   fireRate: 1
   firePoint: {fileID: 6660006379104797909}
   projectilePrefab: {fileID: 2386992535458310089, guid: 2339d81d9cfc79b439ad795615180a0e, type: 3}
+  deathParticles: {fileID: 1375621599433327949, guid: 29c7774f9fa71ca45a1c61ac7dbcefc0, type: 3}
 --- !u!114 &4775147505859766705
 MonoBehaviour:
   m_ObjectHideFlags: 0

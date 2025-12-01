@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Tower : MonoBehaviour, IBuilding
@@ -8,10 +9,21 @@ public class Tower : MonoBehaviour, IBuilding
   public float fireRate = 1f;
   public Transform firePoint;
   public GameObject projectilePrefab;
-
+  public ParticleSystem deathParticles;
   private float fireCooldown = 0f;
   private Transform targetEnemy;
 
+  private void Start()
+  {
+    GetComponent<Piece>().OnDeath += SpawnDeathParticles;
+  }
+
+  private void SpawnDeathParticles(Piece piece)
+  {
+    ParticleSystem p = Instantiate(deathParticles, transform.position, Quaternion.identity);  
+    p.Play();
+  }
+  
   public void Update()
   {
     UpdateTarget();

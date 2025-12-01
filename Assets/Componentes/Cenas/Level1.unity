@@ -11799,7 +11799,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _maxActiveUnits: 20
+  _maxActiveUnits: 25
 --- !u!1001 &554370171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13325,7 +13325,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85ac84c9b5cc80b42bbf607226297145, type: 2}
   - {fileID: 11400000, guid: 6be715cd12912504d95e1face7979aa4, type: 2}
   - {fileID: 11400000, guid: e96baf5da6abc394eadcf53fd13c095f, type: 2}
-  - {fileID: 11400000, guid: 2aa89ed9d9d8aeb4fb356837c6350a51, type: 2}
   _delayBetweenWaves: 3
 --- !u!43 &1187728043
 Mesh:

@@ -86,7 +86,9 @@ public class SpawnManager : MonoBehaviour
   }
   void PositionPiece()
   {
-    if(CurrentActiveUnits >= _maxActiveUnits) { return; }
+    bool isBuilding = currentGhost.GetComponent<IBuilding>() != null;
+
+    if(CurrentActiveUnits >= _maxActiveUnits && !isBuilding) { return; }
     
     bool gastou = GameStateManager.Instance.SpendGold(currentUnitData.cost);
     Debug.Log($"Tentando construir {currentUnitData.unitName} por {currentUnitData.cost} de ouro.");
@@ -111,7 +113,7 @@ public class SpawnManager : MonoBehaviour
     if (aiScript != null) aiScript.enabled = true;
     
     Piece piece = currentGhost.GetComponent<Piece>();
-    if (piece != null)
+    if (piece != null && !isBuilding)
     {
       activeUnits.Add(piece);
       OnPlayerActiveUnitsChange?.Invoke(CurrentActiveUnits);

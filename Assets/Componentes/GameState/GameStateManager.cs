@@ -72,18 +72,22 @@ public class GameStateManager : MonoBehaviour
     }
   }
 
-  public void AddGold(int amount)
-  {
-    if (gold >= maxGold)
+    public void AddGold(int amount)
     {
-      return;
+        if (gold >= maxGold)
+        {
+            return;
+        }
+        else
+        {
+            gold += amount;
+            if (gold > maxGold)
+            {
+                gold = maxGold;
+            }
+            OnGoldChanged?.Invoke(gold);
+        }
     }
-    else
-    {
-      gold += amount;
-    }
-    OnGoldChanged?.Invoke(gold);
-  }
 
   public bool SpendGold(int amount)
   {

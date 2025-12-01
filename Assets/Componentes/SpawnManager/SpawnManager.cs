@@ -1,17 +1,28 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
 public class SpawnManager : MonoBehaviour
 {
+  public event Action<int> OnPlayerActiveUnitsChange;
   public static SpawnManager Instance { get; private set; }
 
   [Header("Configurações")]
   public LayerMask groundLayer;
-
+  
+  [SerializeField]
+  private int _maxActiveUnits = 20;
+  
   private GameObject currentGhost;
   private UnitData currentUnitData;
+  
+  private List<Piece> activeUnits = new();
+
+  public int CurrentActiveUnits { get => activeUnits.Count; }
+
+  public int MaxActiveUnits => _maxActiveUnits;
 
   void Awake()
   {
@@ -75,6 +86,8 @@ public class SpawnManager : MonoBehaviour
   }
   void PositionPiece()
   {
+    if(CurrentActiveUnits >= _maxActiveUnits) { return; }
+    
     bool gastou = GameStateManager.Instance.SpendGold(currentUnitData.cost);
     Debug.Log($"Tentando construir {currentUnitData.unitName} por {currentUnitData.cost} de ouro.");
     if (!gastou)
@@ -96,11 +109,25 @@ public class SpawnManager : MonoBehaviour
       aiScript = currentGhost.GetComponent<FSM_Ranged>();
     }
     if (aiScript != null) aiScript.enabled = true;
+    
+    Piece piece = currentGhost.GetComponent<Piece>();
+    if (piece != null)
+    {
+      activeUnits.Add(piece);
+      OnPlayerActiveUnitsChange?.Invoke(CurrentActiveUnits);
+      piece.OnDeath += OnPieceDeath;
+    }
 
     currentGhost = null;
     currentUnitData = null;
 
     Debug.Log("Unidade construída com sucesso!");
+  }
+
+  private void OnPieceDeath(Piece piece)
+  {
+    activeUnits.Remove(piece);
+    OnPlayerActiveUnitsChange?.Invoke(CurrentActiveUnits);
   }
 
   void CancelGhost()

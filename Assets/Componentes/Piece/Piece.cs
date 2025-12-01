@@ -59,6 +59,8 @@ public class Piece : MonoBehaviour
 
     public void Damage(float hits)
     {
+        if (currentHP <= 0) return;
+        
         currentHP -= hits;
         AudioManager.instance.PlaySFX("Hit", 0.15f);
         if (currentHP <= 0)

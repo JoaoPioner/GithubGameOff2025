@@ -11763,7 +11763,7 @@ MonoBehaviour:
   gold: 100
   maxGold: 500
   goldPerTick: 50
-  tickInterval: 1
+  tickInterval: 1.4
   actualRound: 1
   VPCount: 3
   jogoEmPausa: 0
@@ -11799,6 +11799,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _maxActiveUnits: 20
 --- !u!1001 &554370171
 PrefabInstance:
   m_ObjectHideFlags: 0

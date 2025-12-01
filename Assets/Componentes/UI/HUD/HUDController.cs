@@ -16,8 +16,12 @@ public class HUD_Controller : MonoBehaviour
   private Label goldLabel;
   private Label actualRoundLabel;
   private Label maxActualRoundLabel;
+  private Label actualUnitsLabel;
+  private Label maxUnitsLabel;
   private VisualElement unitsContainer;
 
+  private SpawnManager _spawnManager;
+  
   void Awake()
   {
     var uiDocument = GetComponent<UIDocument>();
@@ -26,6 +30,8 @@ public class HUD_Controller : MonoBehaviour
     goldLabel = root.Q<Label>(goldLabelName);
     actualRoundLabel = root.Q<Label>("ActualRound");
     maxActualRoundLabel = root.Q<Label>("MaxRound");
+    actualUnitsLabel = root.Q<Label>("ActualUnits");
+    maxUnitsLabel = root.Q<Label>("MaxUnits");
     unitsContainer = root.Q<VisualElement>(unitListName);
   }
 
@@ -37,6 +43,13 @@ public class HUD_Controller : MonoBehaviour
       maxActualRoundLabel.text = "/ " + GameStateManager.Instance.MaxRounds.ToString();
 
     UpdateCardsAvailability(GameStateManager.Instance.gold);
+
+    if (SpawnManager.Instance != null)
+    {
+      _spawnManager = SpawnManager.Instance;
+      _spawnManager.OnPlayerActiveUnitsChange += UpdateCurrentUnits;
+      maxUnitsLabel.text = "/ " + _spawnManager.MaxActiveUnits;
+    }
   }
 
   void OnDestroy()
@@ -133,6 +146,14 @@ public class HUD_Controller : MonoBehaviour
     else
     {
       Debug.LogError("SpawnManager não encontrado na cena!");
+    }
+  }
+
+  void UpdateCurrentUnits(int currentUnits)
+  {
+    if (actualUnitsLabel != null)
+    {
+      actualUnitsLabel.text = currentUnits.ToString();
     }
   }
 }

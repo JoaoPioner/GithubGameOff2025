@@ -17,7 +17,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     private float _delayBetweenWaves = 3;
 
-    private readonly List<Piece> _activeUnits = new();
+    private List<Piece> _activeUnits = new();
 
     private WaveData _currentWave;
     private int _currentWaveIndex = 0;
@@ -75,6 +75,7 @@ public class WaveManager : MonoBehaviour
         if (WaveHasFinished())
         {
             _currentWaveIndex++;
+            Debug.Log($"<color=lime>inreasing wave index to {_currentWaveIndex}</color>");
             GameStateManager.Instance.InvokeOnRoundChanged(_currentWaveIndex);
 
             if (_currentWaveIndex == _waves.Count)

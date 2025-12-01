@@ -29,13 +29,13 @@ public class SceneTransition : MonoBehaviour
 
             if (animator == null)
             {
-                Debug.LogError("SceneTransition: Animator não encontrado! Arraste o Canvas com Animator no Inspector.");
+                Debug.LogError("SceneTransition: Animator nï¿½o encontrado! Arraste o Canvas com Animator no Inspector.");
                 return;
             }
 
             if (fadeImage == null)
             {
-                Debug.LogError("SceneTransition: Image não encontrado! Arraste o FadeImage no Inspector.");
+                Debug.LogError("SceneTransition: Image nï¿½o encontrado! Arraste o FadeImage no Inspector.");
                 return;
             }
 
@@ -59,7 +59,8 @@ public class SceneTransition : MonoBehaviour
     public void FadeToScene(string sceneName)
     {
         sceneToLoad = sceneName;
-        Debug.Log($"Iniciando transição para: {sceneName}");
+        Time.timeScale = 1f;
+        Debug.Log($"Iniciando transiï¿½ï¿½o para: {sceneName}");
 
         Canvas canvas = GetComponentInChildren<Canvas>();
         if (canvas != null)

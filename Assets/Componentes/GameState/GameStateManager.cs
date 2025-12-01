@@ -29,8 +29,6 @@ public class GameStateManager : MonoBehaviour
   public event Action<int> onRoundChanged;
 
   [SerializeField]
-  public GameObject EnemySpawner;
-
   private WaveManager waveManager;
 
   void Awake()
@@ -46,9 +44,8 @@ public class GameStateManager : MonoBehaviour
       Destroy(gameObject);
     }
 
-    if (EnemySpawner != null)
+    if (waveManager != null)
     {
-      waveManager = EnemySpawner.GetComponent<WaveManager>();
       waveManager.OnLastWaveFinished += () => EndGame(true);
     }
   }

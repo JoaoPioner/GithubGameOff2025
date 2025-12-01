@@ -22,6 +22,7 @@
 
 .pieceLabel {
     font-size: 22px;
+    -unity-font-definition: url("project://database/Assets/Componentes/Font/Enchanted%20Land.otf?fileID=12800000&guid=3fa62f52c555ce04291f71ce372b2eeb&type=3#Enchanted Land");
 }
 
 .pieceSymbol {

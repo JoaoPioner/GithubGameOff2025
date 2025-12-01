@@ -24,6 +24,7 @@
     font-size: 32px;
     color: rgb(255, 255, 255);
     -unity-font-style: bold;
+    -unity-font-definition: url("project://database/Assets/Componentes/Font/Enchanted%20Land.otf?fileID=12800000&guid=3fa62f52c555ce04291f71ce372b2eeb&type=3#Enchanted Land");
 }
 
 .pieces {

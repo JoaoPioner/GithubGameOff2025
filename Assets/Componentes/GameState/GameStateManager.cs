@@ -9,6 +9,8 @@ public class GameStateManager : MonoBehaviour
   [Header("Economia")]
   public int gold = 100;
   public int maxGold = 500;
+  public int goldPerTick = 10;
+  public float tickInterval = 5f;
 
   [Header("Progresso da Partida")]
   public int actualRound = 1;
@@ -64,9 +66,9 @@ public class GameStateManager : MonoBehaviour
   void Update()
   {
     tickTimer += Time.deltaTime;
-    if (!jogoEmPausa && !jogoAcabou && tickTimer >= 5f)
+    if (!jogoEmPausa && !jogoAcabou && tickTimer >= tickInterval)
     {
-      AddGold(10);
+      AddGold(goldPerTick);
       Debug.Log("Ouro atual: " + gold);
       tickTimer = 0f;
     }

@@ -11762,6 +11762,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gold: 100
   maxGold: 500
+  goldPerTick: 50
+  tickInterval: 1
   actualRound: 1
   maxRounds: 10
   VPCount: 3

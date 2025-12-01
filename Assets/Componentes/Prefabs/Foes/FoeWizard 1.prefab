@@ -1419,7 +1419,6 @@ GameObject:
   - component: {fileID: 5287892783099894811}
   - component: {fileID: 5416223213875163333}
   - component: {fileID: 6091961594827675077}
-  - component: {fileID: 6352176159513369530}
   m_Layer: 0
   m_Name: FoeWizard 1
   m_TagString: GOBLINS
@@ -1561,24 +1560,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6352176159513369530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6590208247168698656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95172f85755bd1f4ea7976cd23d76788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioData: {fileID: 0}
-  attackSoundName: ArrowShot
-  deathSoundName: EnemyDeath
-  hitSoundName: Hit
-  moveSoundName: Move
-  spawnSoundName: Spawn
 --- !u!1 &6664361746964425737
 GameObject:
   m_ObjectHideFlags: 0

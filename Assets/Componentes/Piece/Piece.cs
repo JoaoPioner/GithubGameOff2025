@@ -74,16 +74,19 @@ public class Piece : MonoBehaviour
 
                 if (animator != null)
                 {
-                    if (gameObject.tag == "HUMANS") 
-                    {
-                        AudioManager.instance.PlaySFX("HumanDeath");
-                    } else
-                    {
-                        AudioManager.instance.PlaySFX("EnemyDeath");
-                    }
+                    
                     animator.SetInteger("DeathIndex", UnityEngine.Random.Range(0, 2));
                     animator.SetTrigger("Die");
                 }
+            }
+
+            if (gameObject.tag == "HUMANS")
+            {
+                AudioManager.instance.PlaySFX("HumanDeath");
+            }
+            else
+            {
+                AudioManager.instance.PlaySFX("EnemyDeath");
             }
 
             Debug.Log(gameObject.name + " foi destruído.");

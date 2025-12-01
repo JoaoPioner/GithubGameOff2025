@@ -200,7 +200,16 @@ public class FSM : MonoBehaviour
             Piece targetRef = target.GetComponent<Piece>();
             if (targetRef != null)
             {
+                
                 myPiece.Attack(targetRef);
+                if (gameObject.tag == "HUMANS")
+                {
+                    AudioManager.instance.PlaySFX("SwordHit");
+                }
+                else
+                {
+                    AudioManager.instance.PlaySFX("SwordHit2");
+                }
             }
         }
     }

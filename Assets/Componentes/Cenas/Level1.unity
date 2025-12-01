@@ -11939,6 +11939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTower
       objectReference: {fileID: 0}
+    - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
+      propertyPath: m_TagString
+      value: TOWER
+      objectReference: {fileID: 0}
     - target: {fileID: 3464194074940249830, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13657,6 +13661,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PTower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
+      propertyPath: m_TagString
+      value: TOWER
+      objectReference: {fileID: 0}
     - target: {fileID: 3464194074940249830, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30.2
@@ -14410,6 +14418,10 @@ PrefabInstance:
     - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_Name
       value: PTower (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1980852970067917065, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
+      propertyPath: m_TagString
+      value: TOWER
       objectReference: {fileID: 0}
     - target: {fileID: 3464194074940249830, guid: 65c8e534015b2fa47b81fdf790eb0eb6, type: 3}
       propertyPath: m_LocalPosition.x

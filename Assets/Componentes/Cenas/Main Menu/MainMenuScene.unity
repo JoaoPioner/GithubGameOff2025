@@ -3861,7 +3861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180}
+  m_AnchoredPosition: {x: 9.5, y: 180}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1605999844
@@ -5142,7 +5142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: sfxClips.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: sfxClips.Array.data[0].clip
@@ -5207,6 +5207,14 @@ PrefabInstance:
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: sfxClips.Array.data[7].name
       value: TowerDestroyed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6810ec1d397e3a346a3582211739f445, type: 3}
+    - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
+      propertyPath: sfxClips.Array.data[8].name
+      value: Hit
       objectReference: {fileID: 0}
     - target: {fileID: 6702248364472501668, guid: 276ffbe3078377e4e815790abfac4ab7, type: 3}
       propertyPath: musicTracks.Array.data[1].clip

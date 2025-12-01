@@ -1509,11 +1509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c823dafc18aefa941ae4ea3c050820fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 75
   currentHP: 0
   isUnarmed: 0
   isRanged: 1
-  attackPower: 15
+  attackPower: 7
   healthBar: {fileID: 4969566165413224371}
 --- !u!114 &5416223213875163333
 MonoBehaviour:
@@ -1531,8 +1531,8 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: HUMANS
   searchInterval: 0.5
-  range: 5
-  attackSpd: 2
+  range: 8
+  attackSpd: 1
   cooldown: 2
   isFoe: 1
   firePoint: {fileID: 4505581071035299512}

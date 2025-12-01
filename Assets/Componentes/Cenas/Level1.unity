@@ -13319,8 +13319,6 @@ MonoBehaviour:
   - {fileID: 1608520953}
   _waves:
   - {fileID: 11400000, guid: 0985381aed2e55049a97a33408cd541f, type: 2}
-  - {fileID: 11400000, guid: 872963b3d25face4599c8aaf431010f2, type: 2}
-  - {fileID: 11400000, guid: c3fa4ce4f3e0a744190bbe4014e77f86, type: 2}
 --- !u!43 &1187728043
 Mesh:
   m_ObjectHideFlags: 0

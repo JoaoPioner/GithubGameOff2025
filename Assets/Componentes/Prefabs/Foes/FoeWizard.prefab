@@ -396,7 +396,7 @@ MonoBehaviour:
   currentHP: 0
   isUnarmed: 0
   isRanged: 0
-  attackPower: 10
+  attackPower: 7
   healthBar: {fileID: 8198208733607632632}
 --- !u!114 &7153976138886558467
 MonoBehaviour:
@@ -414,7 +414,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: HUMANS
   searchInterval: 0.5
-  range: 2
+  range: 8
   attackSpd: 1
   cooldown: 2
   isFoe: 1

@@ -61,7 +61,7 @@ public class FSM_Ranged : FSM
         }
 
     }
-    void OnDrawGizmosSelected() // Desenha o alcance da peça na cena
+    void OnDrawGizmos() // Desenha o alcance da peça na cena
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);

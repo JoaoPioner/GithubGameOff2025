@@ -516,7 +516,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: GOBLINS
   searchInterval: 0.5
-  range: 5
+  range: 8
   attackSpd: 1
   cooldown: 2
   isFoe: 0

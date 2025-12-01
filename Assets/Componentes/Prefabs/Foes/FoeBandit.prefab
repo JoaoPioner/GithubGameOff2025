@@ -790,7 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c823dafc18aefa941ae4ea3c050820fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
+  HP: 50
   currentHP: 0
   isUnarmed: 0
   isRanged: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
   target: {fileID: 0}
   targetTag: TOWER
   searchInterval: 0.5
-  range: 2
+  range: 3
   attackSpd: 1
   cooldown: 2
   isFoe: 1

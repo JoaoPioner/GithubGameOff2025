@@ -210,6 +210,12 @@ public class FSM : MonoBehaviour
                 {
                     AudioManager.instance.PlaySFX("SwordHit2");
                 }
+
+                if (gameObject.name.Contains("FoeBandit"))
+                {
+                    Debug.Log("Gold -20");
+                    GameStateManager.Instance.SpendGold(20);
+                }
             }
         }
     }

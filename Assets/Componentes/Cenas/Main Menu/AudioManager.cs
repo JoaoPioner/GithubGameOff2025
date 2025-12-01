@@ -92,6 +92,19 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(sfx.clip);
     }
 
+    public void PlaySFX(string name, float volume)
+    {
+        if (string.IsNullOrEmpty(name))
+            return;
+        SoundEffect sfx = sfxClips.Find(s => s.name == name);
+        if (sfx == null)
+        {
+            Debug.LogWarning("SFX not found: " + name);
+            return;
+        }
+        sfxSource.PlayOneShot(sfx.clip, volume);
+    }
+
     // Ajustar volumes
     public void SetMusicVolume(float v)
     {

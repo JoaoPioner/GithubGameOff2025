@@ -60,7 +60,7 @@ public class Piece : MonoBehaviour
     public void Damage(float hits)
     {
         currentHP -= hits;
-
+        AudioManager.instance.PlaySFX("Hit", 0.15f);
         if (currentHP <= 0)
         {
             var tower = GetComponent<Tower>();

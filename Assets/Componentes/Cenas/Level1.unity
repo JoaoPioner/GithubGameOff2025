@@ -13319,6 +13319,14 @@ MonoBehaviour:
   - {fileID: 1608520953}
   _waves:
   - {fileID: 11400000, guid: 0985381aed2e55049a97a33408cd541f, type: 2}
+  - {fileID: 11400000, guid: 872963b3d25face4599c8aaf431010f2, type: 2}
+  - {fileID: 11400000, guid: c3fa4ce4f3e0a744190bbe4014e77f86, type: 2}
+  - {fileID: 11400000, guid: 57593ca3065e01d4fbd714c3c1a27207, type: 2}
+  - {fileID: 11400000, guid: 85ac84c9b5cc80b42bbf607226297145, type: 2}
+  - {fileID: 11400000, guid: 6be715cd12912504d95e1face7979aa4, type: 2}
+  - {fileID: 11400000, guid: e96baf5da6abc394eadcf53fd13c095f, type: 2}
+  - {fileID: 11400000, guid: 2aa89ed9d9d8aeb4fb356837c6350a51, type: 2}
+  _delayBetweenWaves: 3
 --- !u!43 &1187728043
 Mesh:
   m_ObjectHideFlags: 0

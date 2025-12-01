@@ -14,6 +14,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     private List<WaveData> _waves;
 
+    [SerializeField]
+    private float _delayBetweenWaves = 3;
+
     private readonly List<Piece> _activeUnits = new();
 
     private WaveData _currentWave;
@@ -80,7 +83,7 @@ public class WaveManager : MonoBehaviour
             }
             else
             {
-                StartWave(_currentWaveIndex);
+                StartCoroutine(WaveStartCooldownRoutine());
             }
         }
     }
@@ -103,6 +106,13 @@ public class WaveManager : MonoBehaviour
         SpawnUnit(_currentWave.Units[_currentUnitIndex]);
     }
 
+    private IEnumerator WaveStartCooldownRoutine()
+    {
+        yield return new WaitForSeconds(_delayBetweenWaves);
+        
+        StartWave(_currentWaveIndex);
+    }
+    
     private Vector3 GetRandomSpawnPoint()
     {
         if (spawnPoints.Count == 0) return new Vector3();
